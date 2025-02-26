@@ -1,0 +1,14 @@
+# Use the official Python 3.11 image as the base
+FROM python:3.11
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy all files from the current directory to the container's working directory
+COPY . .
+
+# Install required Python packages
+RUN pip install numpy pandas scikit-learn wandb
+
+# Set the command to run the Python script
+CMD ["python", "distance_classification.py"]
